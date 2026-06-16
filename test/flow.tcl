@@ -82,10 +82,12 @@ set_dont_use $dont_use
 
 estimate_parasitics -placement
 
+report_layer_rc
+
 buffer_ports -inputs
 buffer_ports -outputs
 
-repair_design -slew_margin $slew_margin -cap_margin $cap_margin
+repair_design -slew_margin $slew_margin -cap_margin $cap_margin -verbose
 
 repair_tie_fanout -separation $tie_separation $tielo_port
 repair_tie_fanout -separation $tie_separation $tiehi_port
